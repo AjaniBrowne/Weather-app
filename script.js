@@ -20,6 +20,10 @@ const renderSearched=(val) => {
     searched.classList.add("btn","btn-secondary","w-100");
     
     _e("#search").appendChild(searched);
+     searched.addEventListener("click",(e)=>{
+        e.preventDefault()
+        getLa(e.target.innerHTML)
+     })
 }
 
 const showDays = (days => {
@@ -67,7 +71,7 @@ const updateChart = (info) =>{
 
 const getInfo = (la,lo) => {
     console.log(la,lo)
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${la}&lon=${lo}&exclude={part}&appid=a7f5d6a06c65976eea30661bb630099b`).then(response=>response.json()).then (data=>updateChart(data))
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${la}&lon=${lo}&units=imperial&appid=a7f5d6a06c65976eea30661bb630099b`).then(response=>response.json()).then (data=>updateChart(data))
 }
 
 

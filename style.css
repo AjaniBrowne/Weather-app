@@ -1,3 +1,4 @@
-.box:not(:last-child){
+.box{
     padding-right: 15px;
+    background-color: aquamarine;
 }
